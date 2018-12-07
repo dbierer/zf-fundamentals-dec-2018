@@ -16,4 +16,27 @@ class IndexController extends AbstractActionController
     {
         return new ViewModel();
     }
+    public function urlAction()
+    {
+		echo '<br>' . $this->url()->fromRoute('home');
+		echo '<br>' . $this->url()->fromRoute('application');
+		echo '<br>' . $this->url()->fromRoute('market');
+		return $this->forward()->dispatch(IndexController::class, ['action' => 'index']);
+    }
+    public function getAction()
+    {
+		echo '<br>' . $this->params()->fromQuery('test', 'N/A');
+		return $this->forward()->dispatch(IndexController::class, ['action' => 'index']);
+    }
+    public function requestAction()
+    {
+		echo '<pre>' . var_export($this->getRequest(), TRUE) . '</pre>';
+		return $this->forward()->dispatch(IndexController::class, ['action' => 'index']);
+    }
+    public function responseAction()
+    {
+		$response = $this->getResponse();
+		$response->setBody('<h1>Non Standard Resonse</h1>');
+		return $response;
+    }
 }
