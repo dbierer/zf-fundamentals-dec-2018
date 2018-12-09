@@ -1,2 +1,6 @@
 <h1>Online Market</h1>
-<?= $this->escapeHtml($this->vars()->class) ?>
+<table>
+    <tr><th>Tomorrow</th><td width="10%">&nbsp;</td><td><?= $this->tomorrow ?></td></tr>
+    <tr><th>Next Week</th><td width="10%">&nbsp;</td><td><?= $this->week ?></td></tr>
+    <tr><th>Next Month</th><td width="10%">&nbsp;</td><td><?= $this->month ?></td></tr>
+</table>

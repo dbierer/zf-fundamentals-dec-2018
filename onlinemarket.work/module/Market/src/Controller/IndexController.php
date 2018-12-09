@@ -14,6 +14,10 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
-        return new ViewModel(['class' => __CLASS__]);
+        $userLoggedIn = $this->params()->fromQuery('isLoggedIn', FALSE);
+        if(!$userLoggedIn){
+            return $this->redirect()->toRoute('home');
+        }
+        return new ViewModel($this->dayWeekMonth());
     }
 }
