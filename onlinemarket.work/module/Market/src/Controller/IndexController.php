@@ -12,12 +12,17 @@ use Zend\View\Model\ViewModel;
 
 class IndexController extends AbstractActionController
 {
+    protected $categories;
     public function indexAction()
     {
         $userLoggedIn = $this->params()->fromQuery('isLoggedIn', FALSE);
         if(!$userLoggedIn){
             return $this->redirect()->toRoute('home');
         }
-        return new ViewModel($this->dayWeekMonth());
+        return new ViewModel(array_merge($this->dayWeekMonth(),['categories' => $this->categories]));
+    }
+    public function setCategories($categories)
+    {
+        $this->categories = $categories;
     }
 }
