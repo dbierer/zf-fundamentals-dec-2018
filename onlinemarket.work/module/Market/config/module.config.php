@@ -91,4 +91,12 @@ return [
             __DIR__ . '/../view',
         ],
     ],
+    'service_manager' => [
+        'services' => [
+			'test' => __FILE__,
+            'categories' => [
+				__NAMESPACE__,
+            ],
+        ],
+    ],
 ];

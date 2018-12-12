@@ -56,5 +56,7 @@ return [
         'template_path_stack' => [
             __DIR__ . '/../view',
         ],
+		// this activates the Json strategy
+		'strategies' => [ 'ViewJsonStragegy' ],
     ],
 ];

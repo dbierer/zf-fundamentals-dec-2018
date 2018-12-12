@@ -14,6 +14,7 @@
 return [
     'service_manager' => [
         'services' => [
+			'test' => __FILE__,
             'categories' => [
 				'barter',
 				'beauty',

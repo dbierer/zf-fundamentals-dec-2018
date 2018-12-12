@@ -12,6 +12,7 @@ use Zend\View\Model\ViewModel;
 
 class IndexController extends AbstractActionController
 {
+	protected $test;
     protected $categories;
     public function indexAction()
     {
@@ -19,10 +20,15 @@ class IndexController extends AbstractActionController
         if(!$userLoggedIn){
             return $this->redirect()->toRoute('home');
         }
-        return new ViewModel(array_merge($this->dayWeekMonth(),['categories' => $this->categories]));
+        return new ViewModel(array_merge($this->dayWeekMonth(),
+										['categories' => $this->categories, 'test' => $this->test]));
     }
     public function setCategories($categories)
     {
         $this->categories = $categories;
+    }
+    public function setTest($test)
+    {
+        $this->test = $test;
     }
 }

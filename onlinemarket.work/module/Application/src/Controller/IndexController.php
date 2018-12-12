@@ -8,7 +8,7 @@
 namespace Application\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
+use Zend\View\Model\ {ViewModel, JsonModel};
 
 class IndexController extends AbstractActionController
 {
@@ -39,4 +39,23 @@ class IndexController extends AbstractActionController
 		$response->setBody('<h1>Non Standard Resonse</h1>');
 		return $response;
     }
+    public function escapeAction()
+    {
+		return new ViewModel(['param' => '<script>alert(\'TEST\');</script>']);;
+	}
+    public function unescapedAction()
+    {
+		return new ViewModel(['param' => '<script>alert(\'TEST\');</script>']);;
+	}
+    public function terminalAction()
+    {
+		$viewModel = new ViewModel(['data' => ['class' => __CLASS__, 'method' => __METHOD__, 'file' => __FILE__]]);
+		$viewModel->setTerminal(TRUE);
+		return $viewModel;
+	}
+    public function jsonAction()
+    {
+		$jsonModel = new JsonModel(['data' => ['class' => __CLASS__, 'method' => __METHOD__, 'file' => __FILE__]]);
+		return $jsonModel;
+	}
 }
