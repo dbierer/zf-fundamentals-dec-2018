@@ -1,8 +1,18 @@
 # Zend Framework Fundamentals December 2018
 
+Left off: file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/8/8
+
 ## NOTE TO SELF
-* come up with a more clear example of `escapeHtmlAttr()`
+* Do screens of "Lab: Forms" and post to the repo
+* Test why error message from Callback validator?
 * resolve conflicts re: zend-json and report back to the class how you did it
+  * Replaced all specific requirements with "*"
+  * Ran `composer update`
+  * Observed which versions were installed
+  * Replaced "*" with those versions
+* Find link to "mcrypt" extension being removed
+* Check links in the PDF file: are they active? from Richard to All Participants:
+the link in our slide for publish/subscribe is a dead link (forward slash?)
 
 ## Homework
 * For Fri 7 December 2018
@@ -18,6 +28,26 @@
   * Lab: Creating and Accessing a Service
 * For Fri 14 December 2018
   * Lab: Manipulating Views and Layouts
+* For Mon 17 December 2018
+  * Lab: Forms
+    * Expire-Days and Captcha Options:
+```
+'expire-days' => [
+        0  => 'Never',
+        1  => 'Tomorrow',
+        7  => 'Week',
+        30 => 'Month',
+    ],
+    'captcha-options' => [
+        'expiration' => 300,
+        'font'      => __DIR__ . '/../../public/fonts/FreeSansBold.ttf',
+        'fontSize'  => 24,
+        'height'    => 50,
+        'width'     => 200,
+        'imgDir'    => __DIR__ . '/../../public/captcha',
+        'imgUrl'    => '/captcha',
+    ],
+```
 
 ## ZF2 vs ZF3
 * https://github.com/dbierer/ZF2_ZF3_Side_by_SIde
@@ -51,6 +81,7 @@ return [
 * file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/6/6: need to add namespace for "extends" class
 * file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/6/28: should also mention how to activate alternate view strategies
 * file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/6/31: out of order: belongs w/ discussion of helpers
+* file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/7/49: make sure all of the green-bar slides are in the PDF file!!!
 
 * Lab: Using a Custom Controller Plugin
   * Remember to add an alias to he new plugin. w/be "the" new plugin
