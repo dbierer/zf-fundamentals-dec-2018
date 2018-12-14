@@ -91,6 +91,14 @@ return [
             __DIR__ . '/../view',
         ],
     ],
+    'view_helpers' => [
+        'factories' => [
+            Helper\LeftLinks::class => InvokableFactory::class,
+        ],
+        'aliases' => [
+			'leftLinks' => Helper\LeftLinks::class,
+        ],
+    ],
     'service_manager' => [
         'services' => [
 			'test' => __FILE__,

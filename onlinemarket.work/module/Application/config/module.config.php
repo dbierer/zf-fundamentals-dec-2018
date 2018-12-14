@@ -57,6 +57,6 @@ return [
             __DIR__ . '/../view',
         ],
 		// this activates the Json strategy
-		'strategies' => [ 'ViewJsonStragegy' ],
+		'strategies' => [ 'ViewJsonStrategy' ],
     ],
 ];
