@@ -12,6 +12,7 @@ class PostControllerFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $controller = new PostController();
+        $controller->setPostForm($container->get(PostForm::class));
         return $controller;
     }
 }

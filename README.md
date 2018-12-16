@@ -3,17 +3,22 @@
 Left off: file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/8/8
 
 ## NOTE TO SELF
-* Do screens of "Lab: Forms" and post to the repo
 * Test why error message from Callback validator?
+  * Problem: never checked input to callback to see if "," was present in the value to be validated
+  * Added this code at the top of the callback:
+```
+if (!strpos($val, ',')) return FALSE;
+```
 * resolve conflicts re: zend-json and report back to the class how you did it
   * Replaced all specific requirements with "*"
   * Ran `composer update`
   * Observed which versions were installed
   * Replaced "*" with those versions
 * Find link to "mcrypt" extension being removed
-* Check links in the PDF file: are they active? from Richard to All Participants:
-the link in our slide for publish/subscribe is a dead link (forward slash?)
-
+  * https://wiki.php.net/rfc/mcrypt-viking-funeral
+* Check links in the PDF file: are they active? from Richard to All Participants: the link in our slide for publish/subscribe is a dead link (forward slash?)
+  * For some reason it was URL encoded in the PDF.  Here is the link: https://en.wikipedia.org/wiki/Publish-subscribe_pattern
+  
 ## Homework
 * For Fri 7 December 2018
   * Lab: Create a New Module

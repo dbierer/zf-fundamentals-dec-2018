@@ -11,9 +11,6 @@ class Module
 	{
 		return [
 			'services' => [
-				'categories' => [
-					__CLASS__,
-				],
 				'test' => __FILE__,
 			],
 		];

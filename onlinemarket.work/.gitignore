@@ -1,5 +1,6 @@
 .vagrant/
 vendor/
 data/cache/*
+public/captcha/*
 !data/cache/.gitkeep
 phpunit.xml

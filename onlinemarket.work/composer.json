@@ -13,7 +13,11 @@
         "php": "^5.6 || ^7.0",
         "zendframework/zend-component-installer": "^1.0 || ^0.7 || ^1.0.0-dev@dev",
         "zendframework/zend-mvc": "*",
-        "zfcampus/zf-development-mode": "*"
+        "zfcampus/zf-development-mode": "*",
+        "zendframework/zend-form": "^2.13",
+        "zendframework/zend-captcha": "^2.8",
+        "zendframework/zend-mvc-plugin-flashmessenger": "^1.1",
+        "zendframework/zend-i18n": "^2.9"
     },
     "autoload": {
         "psr-4": {
