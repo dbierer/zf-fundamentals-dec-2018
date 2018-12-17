@@ -7,6 +7,7 @@
 
 namespace Application\Controller;
 
+use Zend\EventManager\EventManager;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ {ViewModel, JsonModel};
 
@@ -57,5 +58,25 @@ class IndexController extends AbstractActionController
     {
 		$jsonModel = new JsonModel(['data' => ['class' => __CLASS__, 'method' => __METHOD__, 'file' => __FILE__]]);
 		return $jsonModel;
+	}
+	public function triggerAction()
+	{
+		// using the Controller's built-in event manager:
+		$em1 = $this->getEventManager();
+		$em1->addIdentifiers(['ID209']);
+		$em1->trigger('whatever', $this, ['class' => __METHOD__]);
+		
+		// using a new event manager:
+		$em2 = new EventManager($em1->getSharedManager());
+		$em2->addIdentifiers(['ID209']);
+		$em2->trigger('whatever', $this, ['class' => __METHOD__]);
+
+		// using an event manager created by the service container:
+		$em3 = $this->getEvent()->getApplication()->getServiceManager()->get('EventManager');
+		$em3->addIdentifiers(['ID209']);
+		$em3->trigger('whatever', $this, ['class' => __METHOD__]);
+
+		echo __METHOD__;
+		return $this->getResponse();
 	}
 }
