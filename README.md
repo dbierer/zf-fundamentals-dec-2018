@@ -2,23 +2,6 @@
 
 Left off: file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/8/8
 
-## NOTE TO SELF
-* Test why error message from Callback validator?
-  * Problem: never checked input to callback to see if "," was present in the value to be validated
-  * Added this code at the top of the callback:
-```
-if (!strpos($val, ',')) return FALSE;
-```
-* resolve conflicts re: zend-json and report back to the class how you did it
-  * Replaced all specific requirements with "*"
-  * Ran `composer update`
-  * Observed which versions were installed
-  * Replaced "*" with those versions
-* Find link to "mcrypt" extension being removed
-  * https://wiki.php.net/rfc/mcrypt-viking-funeral
-* Check links in the PDF file: are they active? from Richard to All Participants: the link in our slide for publish/subscribe is a dead link (forward slash?)
-  * For some reason it was URL encoded in the PDF.  Here is the link: https://en.wikipedia.org/wiki/Publish-subscribe_pattern
-  
 ## Homework
 * For Fri 7 December 2018
   * Lab: Create a New Module
@@ -35,7 +18,16 @@ if (!strpos($val, ',')) return FALSE;
   * Lab: Manipulating Views and Layouts
 * For Mon 17 December 2018
   * Lab: Forms
-    * Expire-Days and Captcha Options:
+* For Wed 19 December 2018
+  * Lab: Events
+    * Instead of using `htmlList()` when displaying categories, use the `leftLinks` view helper defined in the view lab
+  * Lab: Shared Event Manager
+    * In order to view the error log in the VM:
+```
+$sudo tail /var/log/apache2/error.log
+```
+
+* Expire-Days and Captcha Options:
 ```
 'expire-days' => [
         0  => 'Never',
@@ -53,6 +45,23 @@ if (!strpos($val, ',')) return FALSE;
         'imgUrl'    => '/captcha',
     ],
 ```
+
+## NOTE TO SELF
+* Test why error message from Callback validator?
+  * Problem: never checked input to callback to see if "," was present in the value to be validated
+  * Added this code at the top of the callback:
+```
+if (!strpos($val, ',')) return FALSE;
+```
+* resolve conflicts re: zend-json and report back to the class how you did it
+  * Replaced all specific requirements with "*"
+  * Ran `composer update`
+  * Observed which versions were installed
+  * Replaced "*" with those versions
+* Find link to "mcrypt" extension being removed
+  * https://wiki.php.net/rfc/mcrypt-viking-funeral
+* Check links in the PDF file: are they active? from Richard to All Participants: the link in our slide for publish/subscribe is a dead link (forward slash?)
+  * For some reason it was URL encoded in the PDF.  Here is the link: https://en.wikipedia.org/wiki/Publish-subscribe_pattern
 
 ## ZF2 vs ZF3
 * https://github.com/dbierer/ZF2_ZF3_Side_by_SIde
@@ -87,6 +96,8 @@ return [
 * file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/6/28: should also mention how to activate alternate view strategies
 * file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/6/31: out of order: belongs w/ discussion of helpers
 * file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/7/49: make sure all of the green-bar slides are in the PDF file!!!
+* file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/8/24: need to add "use" statement for Zend\Mvc\MvcEvent
+* file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/8/35: use `leftLinks()` view helper
 
 * Lab: Using a Custom Controller Plugin
   * Remember to add an alias to he new plugin. w/be "the" new plugin
@@ -112,6 +123,8 @@ vb.customize ["modifyvm", :id, "--accelerate3d", "off"]
         * On another note. I noticed while checking it out, you didn't composer install the vendor directory before having me upload the course-project.tar.bz2.  That means the localhost links bonk and will require the vendor directory installed.
 
 ## Q & A
+* Q: Is there a list of ZF components which need to be added to `modules.config.php`
+
 * Q: Where do I find examples of ZF tests?
 
 * Q: What about the "invokables" service key
