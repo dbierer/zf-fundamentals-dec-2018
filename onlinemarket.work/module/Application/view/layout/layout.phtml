@@ -47,11 +47,21 @@
             </div>
         </nav>
         <div class="container">
+            <div class="col-md-2">
+                <h3>Categories</h3>
+                <?php if (isset($this->categories)) : ?>
+                <?= $this->leftLinks($this->categories, '/market/view/categories'); ?>
+                <?php else : ?>
+                List of Categories
+                <?php endif; ?>
+            </div>
+            <div class="col-md-10">
             <?= $this->content ?>
             <hr>
             <footer>
                 <p>&copy; 2005 - <?= date('Y') ?> by Zend Technologies Ltd. All rights reserved.</p>
             </footer>
+            </div>
         </div>
         <?= $this->inlineScript() ?>
     </body>

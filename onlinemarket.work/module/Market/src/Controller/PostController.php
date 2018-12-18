@@ -1,6 +1,7 @@
 <?php
 namespace Market\Controller;
 
+use Market\Event\MarketEvent;
 use Zend\View\Model\ViewModel;
 use Zend\Mvc\Controller\AbstractActionController;
 
@@ -21,9 +22,19 @@ class PostController extends AbstractActionController
             $data = $this->params()->fromPost();
             $this->postForm->setData($data);
             if ($this->postForm->isValid()) {
+                // to use the Mvc event manager, use this syntax:
+                // $em = $this->getEvent()->getApplication()->getEventManager()
+                // otherwise this retrieves the controller's own event manager:
+                $em = $this->getEventManager();
+                $em->trigger(MarketEvent::EVENT_POST_VALID, $this, ['file' => __FILE__, 'line' => __LINE__]);
                 $this->flashMessenger()->addMessage(self::SUCCESS_POST);
                 return $this->redirect()->toRoute('market');
             } else {
+                // to use the Mvc event manager, use this syntax:
+                // $em = $this->getEvent()->getApplication()->getEventManager()
+                // otherwise this retrieves the controller's own event manager:
+                $em = $this->getEventManager();
+                $em->trigger(MarketEvent::EVENT_POST_INVALID, $this, ['file' => __FILE__, 'line' => __LINE__]);
                 $this->flashMessenger()->addMessage(self::ERROR_POST);
                 $invalid = TRUE;
             }
