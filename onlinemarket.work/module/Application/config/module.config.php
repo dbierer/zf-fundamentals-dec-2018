@@ -59,4 +59,14 @@ return [
 		// this activates the Json strategy
 		'strategies' => [ 'ViewJsonStrategy' ],
     ],
+    'service_manager' => [
+		'services' => [
+			'application-db-config' => [
+				'driver' => 'PDO',
+				'dsn'	 => 'mysql:host=localhost;dbname=course',
+				'username' => 'vagrant',
+				'password' => 'vagrant',
+			],
+		],
+	],
 ];

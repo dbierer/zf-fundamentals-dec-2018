@@ -36,4 +36,14 @@ class Module
 		echo '<br>' . get_class($e->getTarget());
 		echo '<br>' . var_export($e->getParams(), TRUE);
 	}
+	public function getServiceConfig()
+	{
+		return [
+			'factories' => [
+				'application-db-adapter' => function ($container) {
+					return new \Zend\Db\Adapter\Adapter($container->get('application-db-config'));
+				},
+			],
+		];
+	}
 }

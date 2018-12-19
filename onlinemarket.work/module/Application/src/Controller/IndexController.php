@@ -79,4 +79,12 @@ class IndexController extends AbstractActionController
 		echo __METHOD__;
 		return $this->getResponse();
 	}
+	public function queryAction()
+	{
+		$container = $this->getEvent()->getApplication()->getServiceManager();
+		$adapter   = $container->get('application-db-adapter');
+		$result    = $adapter->query('SELECT * FROM listings', []);
+		var_dump($result);
+		return $this->getResponse();
+	}
 }
