@@ -2,7 +2,27 @@
 
 Left off: file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/8/8
 
+## VM Database Setup
+* From the browser go to phpMyAdmin:
+```
+http://phpmyadmin/
+```
+* Click on `Databases`
+* Enter under `New Database` the name `course` and click on `create`
+* Click on `Import`
+* Click `Browse` select `/home/vagrant/Zend/workspaces/DefaultWorkspace/course.sql` and click on `Go`
+* Click on `Privileges` and click on the link `Add new user`
+* Enter the following information:
+    * *User Name* = `vagrant`
+    * *Host Name* = `localhost`
+    * *Password*  = `vagrant`
+* Make sure `Grant all privileges on database course` is checked
+* Scroll down and click `Go` end right
+
 ## Homework
+* For Fri 21 December 2018
+  * Lab: Database Persistence
+    * NOTE: need to follow above procedure to set up the database
 * For Fri 7 December 2018
   * Lab: Create a New Module
   * Lab: Create a New Controller
@@ -98,6 +118,9 @@ return [
 * file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/7/49: make sure all of the green-bar slides are in the PDF file!!!
 * file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/8/24: need to add "use" statement for Zend\Mvc\MvcEvent
 * file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/8/35: use `leftLinks()` view helper
+* file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/9/39: this line must be removed: `$userTable = $container->get('model-user-table');`
+* file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/9/50: missing a slide on how to implement SequenceFeature
+* file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/9/69: s/be done already in View lab
 
 * Lab: Using a Custom Controller Plugin
   * Remember to add an alias to he new plugin. w/be "the" new plugin
