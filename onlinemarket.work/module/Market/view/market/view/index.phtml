@@ -1,1 +1,2 @@
-<h1><?= $this->category ?></h1>
+<h1><?= ucfirst($this->category) ?></h1>
+<?= $this->partial('partials/list', ['listing' => $this->listing]); ?>  

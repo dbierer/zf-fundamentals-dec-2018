@@ -1,6 +1,7 @@
 <?php
 namespace Market\Controller\Factory;
 
+use Model\Table\Listings;
 use Market\Controller\IndexController;
 use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\Factory\FactoryInterface;
@@ -12,6 +13,7 @@ class IndexControllerFactory implements FactoryInterface
         $controller = new IndexController();
         $controller->setCategories($container->get('categories'));
         $controller->setTest($container->get('test'));
+        $controller->setListingsTable($container->get(Listings::class));
         return $controller;
     }
 }

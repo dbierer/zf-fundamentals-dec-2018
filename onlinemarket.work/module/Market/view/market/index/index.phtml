@@ -5,5 +5,4 @@
     <tr><th>Next Month</th><td width="10%">&nbsp;</td><td><?= $this->month ?></td></tr>
 </table>
 <b>TEST:</b> <?= $this->test; ?>
-<h3>Categories</h3>
-<?= $this->leftLinks($this->categories, '/market/view/categories'); ?>
+<?= $this->partial('partials/item', ['item' => $this->item]); ?>  

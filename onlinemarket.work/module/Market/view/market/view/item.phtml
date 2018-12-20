@@ -1,2 +1,2 @@
-<h1>Item</h1>
-<?= $this->itemId ?>
+<h1><?= ucfirst($this->category) ?></h1>
+<?= $this->partial('partials/item', ['item' => $this->item]); ?>  

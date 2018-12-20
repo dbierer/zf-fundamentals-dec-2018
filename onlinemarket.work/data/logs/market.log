@@ -1,2 +1,4 @@
 
 2018-12-18 17:23:06 : File : /home/vagrant/zf-fundamentals-dec-2018/onlinemarket.work/module/Market/src/Controller/PostController.php : Line : 37 : ERROR: unable to post to the online market
+2018-12-20 21:22:04 : File : /home/jed/Repos/zf-fundamentals-dec-2018/onlinemarket.work/module/Market/src/Controller/PostController.php : Line : 44 : ERROR: unable to post to the online market
+2018-12-20 21:23:47 : File : /home/jed/Repos/zf-fundamentals-dec-2018/onlinemarket.work/module/Market/src/Controller/PostController.php : Line : 32 : SUCCESS: successfully posted to the online market

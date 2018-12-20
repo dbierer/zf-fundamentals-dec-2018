@@ -1,6 +1,7 @@
 <?php
 namespace Market\Controller\Factory;
 
+use Model\Table\Listings;
 use Market\Form\PostForm;
 use Market\Controller\PostController;
 use Interop\Container\ContainerInterface;
@@ -13,6 +14,7 @@ class PostControllerFactory implements FactoryInterface
     {
         $controller = new PostController();
         $controller->setPostForm($container->get(PostForm::class));
+        $controller->setListingsTable($container->get(Listings::class));
         return $controller;
     }
 }

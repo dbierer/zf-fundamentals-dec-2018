@@ -18,12 +18,14 @@
         "zendframework/zend-captcha": "^2.8",
         "zendframework/zend-mvc-plugin-flashmessenger": "^1.1",
         "zendframework/zend-i18n": "^2.9",
-        "zendframework/zend-db": "^2.9"
+        "zendframework/zend-db": "^2.9",
+        "zendframework/zend-debug": "^2.6"
     },
     "autoload": {
         "psr-4": {
             "Application\\": "module/Application/src/",
-            "Market\\": "module/Market/src/"
+            "Market\\": "module/Market/src/",
+            "Model\\": "module/Model/src/"
         }
     },
     "autoload-dev": {

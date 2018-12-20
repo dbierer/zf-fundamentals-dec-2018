@@ -14,6 +14,7 @@ class IndexController extends AbstractActionController
 {
 	protected $test;
     protected $categories;
+    use ListingsTableTrait;
     public function indexAction()
     {
         $userLoggedIn = $this->params()->fromQuery('isLoggedIn', FALSE);
@@ -21,7 +22,9 @@ class IndexController extends AbstractActionController
             return $this->redirect()->toRoute('home');
         }
         return new ViewModel(array_merge($this->dayWeekMonth(),
-										['categories' => $this->categories, 'test' => $this->test]));
+										['item' => $this->listingsTable->findLatest(), 
+                                         'test' => $this->test])
+        );
     }
     public function setCategories($categories)
     {
