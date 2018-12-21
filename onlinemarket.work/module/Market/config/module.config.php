@@ -15,7 +15,7 @@ return [
                     'defaults' => [
                         'controller' => Controller\IndexController::class,
                         'action'     => 'index',
-                        'module'     => __NAMESPACE_,
+                        'module'     => __NAMESPACE__,
                     ],
                 ],
                 'may_terminate' => TRUE,

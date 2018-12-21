@@ -37,7 +37,7 @@ class IndexController extends AbstractActionController
     public function responseAction()
     {
 		$response = $this->getResponse();
-		$response->setBody('<h1>Non Standard Resonse</h1>');
+		$response->setContent('<h1>Non Standard Resonse</h1>');
 		return $response;
     }
     public function escapeAction()

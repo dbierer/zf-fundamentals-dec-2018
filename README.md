@@ -90,7 +90,7 @@ if (!strpos($val, ',')) return FALSE;
 * file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/3/8 s/be ZF Advanced Class (confirm?)
 * RoutMatch
 * file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/4/15: not a public function: it's an option of $this->redirect()->
-* file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/4/25: response->setBody() no longer available ... what is the alternative, and what happened???
+* file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/4/25: `$response->setBody()` no longer available: replaced with `$response->setContent()`
 * file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/4/33: add mention that you also need to define a route to the ViewController
 * file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/5/24: file s/be `/config/autoload/db.local.php`
 * file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/6/9:  the "View" unit is out of order: s/be first!
