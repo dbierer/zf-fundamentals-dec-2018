@@ -121,6 +121,8 @@ return [
 * file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/9/39: this line must be removed: `$userTable = $container->get('model-user-table');`
 * file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/9/50: missing a slide on how to implement SequenceFeature
 * file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/9/69: s/be done already in View lab
+* file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/10/16: these constants are in Zend\ModuleManager\ModuleEvent
+* file:///D:/Repos/ZF-Level-1/Course_Materials/index.html#/10/24: styling issues?
 
 * Lab: Using a Custom Controller Plugin
   * Remember to add an alias to he new plugin. w/be "the" new plugin
