@@ -71,13 +71,13 @@ class Listings extends TableGateway
         $today = new DateTime('now');
         switch ($data['expires']) {
             case 1 :
-                $data['date_expires'] = $today->add('P1D')->format(self::DATE_FORMAT);
+                $data['date_expires'] = $today->add(new DateInterval('P1D'))->format(self::DATE_FORMAT);
                 break;
             case 7 :
-                $data['date_expires'] = $today->add('P1W')->format(self::DATE_FORMAT);
+                $data['date_expires'] = $today->add(new DateInterval('P1W'))->format(self::DATE_FORMAT);
                 break;
             case 30 :
-                $data['date_expires'] = $today->add('P1M')->format(self::DATE_FORMAT);
+                $data['date_expires'] = $today->add(new DateInterval('P1M'))->format(self::DATE_FORMAT);
                 break;
             default : 
                 $data['date_expires'] = NULL;

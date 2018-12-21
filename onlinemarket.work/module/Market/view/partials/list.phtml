@@ -25,6 +25,7 @@
                 <?php while ($item = $this->listing->current()) : ?>
                 <tr style="background-color:<?php echo $this->cycle(array('#F0F0F0', '#FFFFFF'))->next(); ?>;">
                     <td>
+						<!-- TODO: should use the "url()" view helper instead of hard-coding the path to view item! -->
                         <a href="<?php echo $this->basePath(); ?>/market/view/item/<?php echo (int) $item->listings_id; ?>">
                             <b>
                                 <i><?php echo $this->escapeHtml($item->title); ?></i>
